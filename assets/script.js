@@ -30,15 +30,11 @@ function writePassword() {
     var confirmSpecialChar = confirm("Would you like to include special characters?");
 
 
-    //If all criteria confirmed
+    //If all criteria selected
     if (confirmLowerCase && confirmUpperCase && confirmNumbers && confirmSpecialChar) {
       userChoice = lowerCase.concat(upperCase, numbers, specialChar);
-
-    //If no criteria confirmed
-    } else if (!confirmLowerCase && !confirmUpperCase && !confirmNumbers && !confirmLowerCase) {
-      alert("Please select some criteria.");
       
-    //If 3 criteria confirmed
+    //If 3 criteria selected
     } else if (confirmLowerCase && confirmUpperCase && confirmNumbers && !confirmSpecialChar) {
       userChoice = lowerCase.concat(upperCase, numbers);
     
@@ -51,7 +47,7 @@ function writePassword() {
     } else if (!confirmLowerCase && confirmUpperCase && confirmNumbers && confirmSpecialChar) {
       userChoice = upperCase.concat(numbers, specialChar);
     
-    //If 2 criteria confirmed
+    //If 2 criteria selected
     } else if (confirmLowerCase && confirmUpperCase && !confirmNumbers && !confirmSpecialChar) {
       userChoice = lowerCase.concat(upperCase);
     
@@ -60,12 +56,38 @@ function writePassword() {
     
     } else if (!confirmLowerCase && confirmUpperCase && confirmNumbers && !confirmSpecialChar) {
       userChoice = upperCase.concat(numbers);
+    
+    } else if (confirmLowerCase && !confirmUpperCase && !confirmNumbers && confirmSpecialChar) {
+      userChoice = lowerCase.concat(specialChar);
+
+    } else if (!confirmLowerCase && confirmUpperCase && !confirmNumbers && confirmSpecialChar) {
+      userChoice = upperCase.concat(specialChar);
+
+    } else if (!confirmLowerCase && !confirmUpperCase && confirmNumbers && confirmSpecialChar) {
+      userChoice = numbers.concat(specialChar);
+    
+    //If 1 criteria selected
+    } else if (confirmLowerCase && !confirmUpperCase && !confirmNumbers && !confirmSpecialChar) {
+      userChoice = lowerCase;
+
+    } else if (!confirmLowerCase && confirmUpperCase && !confirmNumbers && !confirmSpecialChar) {
+      userChoice = upperCase;
+    
+    } else if (!confirmLowerCase && !confirmUpperCase && confirmNumbers && !confirmSpecialChar) {
+      userChoice = numbers;
+
+    } else if (!confirmLowerCase && !confirmUpperCase && !confirmNumbers && confirmSpecialChar) {
+      userChoice = specialChar;
+    
+    } else if (!confirmLowerCase && !confirmUpperCase && !confirmNumbers && !confirmSpecialChar) {
+      alert("Please select some criteria.");
     }
+    
     //Password generating loop
     for (var i = 0; i < confirmLength; i++) {
-        retVal.push (userChoice[Math.floor(Math.random() * userChoice.length)])
-      }
-      return retVal.join("");
+      retVal.push (userChoice[Math.floor(Math.random() * userChoice.length)])
+    }
+    return retVal.join("");
     }
   }
 // Add event listener to generate button
