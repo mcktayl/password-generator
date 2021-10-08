@@ -15,13 +15,11 @@ This project runs in the browser and requires no installation from user.
 
 ## Usage
 The user clicks "Generate Password" and is then prompted to select a length.  If they do not select a valid length, it alerts them and prompts them again.  Once length is selected, user decides whether or not to include lowercase, uppercase, numbers, and special characters in their password.  It then generates a password based on the criteria selected.
-    ```md
-    ![Screenshot](assets/images/Screenshot.png)
-    ```
-Example:
-    ```md
-    ![Demonstration](assets/images/Demonstration.mp4)
-    ```
+
+![Screenshot](https://user-images.githubusercontent.com/91210267/136591504-02a5a6b6-48a3-4938-838a-212c04cee8d1.png)
+
+Demonstration:
+https://user-images.githubusercontent.com/91210267/136591520-a63c715d-1d9c-40a1-9383-a1581fa81dbc.mp4
 
 ## Credits
 List your collaborators, if any, with links to their GitHub profiles.
