@@ -54,6 +54,12 @@ function writePassword() {
     //If 2 criteria confirmed
     } else if (confirmLowerCase && confirmUpperCase && !confirmNumbers && !confirmSpecialChar) {
       userChoice = lowerCase.concat(upperCase);
+    
+    } else if (confirmLowerCase && !confirmUpperCase && confirmNumbers && !confirmSpecialChar) {
+      userChoice = lowerCase.concat(numbers);
+    
+    } else if (!confirmLowerCase && confirmUpperCase && confirmNumbers && !confirmSpecialChar) {
+      userChoice = upperCase.concat(numbers);
     }
     //Password generating loop
     for (var i = 0; i < confirmLength; i++) {
